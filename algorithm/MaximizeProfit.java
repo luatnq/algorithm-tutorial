@@ -7,26 +7,28 @@ import java.util.List;
 public class MaximizeProfit {
 
   public static void main(String[] args) {
-    int[] prices = new int[]{7, 6, 4, 3, 1};
-    maxProfit(prices);
+    int[] prices = new int[]{2,6,1,4,8,3};
+    int[] result = maxProfit(prices);
+
+    System.out.println("Begin: " + result[0] + "  End: " + result[1]);
   }
 
-  public static int maxProfit(int[] prices) {
+  public static int[] maxProfit(int[] prices) {
 
-    int maxProfit = 0, n = prices.length;
+    int maxProfit = 0, n = prices.length, indexBegin = 0, indexEnd = 0;
     for (int i = 0; i < n - 1; i++) {
-      int[] subPrices = Arrays.copyOfRange(prices, i+1, n - 1);
-      Arrays.stream(subPrices).max();
       for (int j = i + 1; j < n; j++) {
         int temp = prices[j] - prices[i];
 
         if (maxProfit < temp) {
+          indexBegin = i;
+          indexEnd = j;
           maxProfit = temp;
         }
       }
 
     }
 
-    return maxProfit;
+    return new int[]{indexBegin, indexEnd};
   }
 }
