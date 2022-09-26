@@ -21,7 +21,7 @@ public class J04006 {
         fullName,
         className,
         formatFull.format(format.parse(dob)),
-        (float) (Math.floor(mark1 * 100.0) / 100.0)
+        mark1
     );
     System.out.println(student);
   }
