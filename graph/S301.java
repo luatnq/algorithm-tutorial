@@ -3,11 +3,18 @@ package graph;
 import java.util.*;
 
 public class S301 {
+<<<<<<< HEAD
 
   static int m, n;
   static boolean[] check = new boolean[1001];
   static int track[] = new int[1001];
   static ArrayList<Integer>[] dsKe = new ArrayList[1001];
+=======
+  static int m, n;
+  static ArrayList<Integer>[] dsKe = new ArrayList[1001];
+  static boolean[] check = new boolean[1001];
+  static int[] track = new int[1001];
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
 
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
@@ -15,15 +22,24 @@ public class S301 {
     while (t-- > 0) {
       n = scan.nextInt();
       m = scan.nextInt();
+<<<<<<< HEAD
       int s = scan.nextInt(), e = scan.nextInt();
+=======
+      int s = scan.nextInt();
+      int e = scan.nextInt();
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
       for (int i = 0; i <= n; i++) {
         dsKe[i] = new ArrayList<>();
         check[i] = true;
         track[i] = 0;
       }
       for (int i = 1; i <= m; i++) {
+<<<<<<< HEAD
         int u = scan.nextInt();
         int v = scan.nextInt();
+=======
+        int u = scan.nextInt(), v = scan.nextInt();
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
         dsKe[u].add(v);
       }
       bfs(s);
@@ -35,6 +51,7 @@ public class S301 {
           road.add(x);
           x = track[x];
         }
+<<<<<<< HEAD
 
         road.add(s);
         Collections.reverse(road);
@@ -47,6 +64,13 @@ public class S301 {
           }
         }
 
+=======
+        road.add(s);
+        Collections.reverse(road);
+        for (Integer integer : road){
+          System.out.print(integer + " ");
+        }
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
         System.out.println();
       }
     }
@@ -58,6 +82,7 @@ public class S301 {
     check[u] = false;
     while (!queue.isEmpty()) {
       int v = queue.poll();
+<<<<<<< HEAD
 //      System.out.print(v + " ");
       for (Integer x : dsKe[v]) {
         if (check[x]) {
@@ -67,11 +92,25 @@ public class S301 {
         }
       }
     }
+=======
+      System.out.print(v + " ");
+      for (Integer integer : dsKe[v]) {
+        if (check[integer]) {
+          queue.add(integer);
+          check[integer] = false;
+        }
+      }
+    }
+
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
   }
 }
 
 /*
+<<<<<<< HEAD
 1 -> 2 -> 5 -> 6
+=======
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
 1
 6 9 1 6
 1 2
@@ -83,4 +122,10 @@ public class S301 {
 5 4
 5 6
 6 4
+<<<<<<< HEAD
  */
+=======
+
+
+ */
+>>>>>>> 3c771e575d2234b9e2a629cc33afacb2793113dd
